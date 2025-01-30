@@ -1,3 +1,125 @@
-/* Your styles go here */
+
+// Custom variables
+$primary: #e7c6ff;
+$secondary: #7209b7;
+$dark: #000;
+$info: #f8f9fa;
+$danger: red;
+$text: white;
+$font-family-base: 'Roboto', sans-serif;
+$headings-font-family: 'Montserrat', sans-serif;
+
+
+
+$theme-colors: (
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "info":       $info,
+  "dark":       $dark,
+  "danger":     $danger,
+  "text":       $text,
+  
+);
+
+// Import Bootstrap
+@import "bootstrap/scss/bootstrap";
 @import "bootstrap/scss/bootstrap.scss";
 @import "bootstrap-icons/font/bootstrap-icons.css";
+
+// Custom styles
+.hero-section {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                url('../images/peter-broomfield-m3m-lnR90uM-unsplash.jpg') center/cover;
+    color: white;
+}
+
+.card {
+    transition: transform 0.3s;
+    &:hover {
+        transform: translateY(-5px);
+    }
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    background: $primary;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+// Responsive adjustments
+@include media-breakpoint-down(md) {
+    .hero {
+        padding: 2rem 0;
+    }
+    
+    .navbar-brand img {
+        width: 100px;
+    }
+}
+
+.advantages {
+  background-color: #f8f9fa;
+  
+  .card {
+    transition: transform 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+  
+  i {
+    min-width: 40px;
+  }
+  
+  @include media-breakpoint-down(md) {
+    .card {
+      margin-bottom: 1.5rem;
+    }
+  }
+}
+
+.testimonials {
+  .testimonial-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 5%;
+  }
+
+  .rating {
+    font-size: 1.2rem;
+  }
+}
+
+.faqs {
+  .accordion-button {
+    font-weight: bold;
+    background-color: #f8f9fa;
+    &:not(.collapsed) {
+      background-color: #e9ecef;
+      color: #000;
+    }
+  }
+
+  .accordion-body {
+    background-color: #fff;
+  }
+
+  .btn-outline-primary {
+    padding: 10px 30px;
+    font-size: 1.1rem;
+  }
+}
